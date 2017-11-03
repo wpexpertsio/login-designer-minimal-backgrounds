@@ -11,6 +11,7 @@ var license                	= pkg.license;
 var copyright              	= pkg.copyright;
 var author                 	= pkg.author;
 var plugin_uri              	= pkg.plugin_uri;
+var downloadid              	= pkg.downloadid;
 
 var imagesSRC			= './assets/images/src/**/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.
 var imagesDestination	  	= './assets/images/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
@@ -20,7 +21,7 @@ var destFile                	= slug+'.pot';
 var packageName             	= project;
 var bugReport               	= pkg.author_uri;
 var lastTranslator          	= pkg.author;
-var team                    	= pkg.author;
+var team                    	= pkg.author_shop;
 var translatePath           	= './languages';
 var translatableFiles       	= ['./**/*.php'];
 
@@ -109,6 +110,14 @@ gulp.task( 'build-variables', function () {
 			replacement: project
 		},
 		{
+			match: 'pkg.slug',
+			replacement: slug
+		},
+		{
+			match: 'pkg.downloadid',
+			replacement: downloadid
+		},
+		{
 			match: 'pkg.license',
 			replacement: pkg.license
 		},
@@ -117,8 +126,28 @@ gulp.task( 'build-variables', function () {
 			replacement: pkg.author
 		},
 		{
+			match: 'pkg.plugin_uri',
+			replacement: pkg.plugin_uri
+		},
+		{
+			match: 'pkg.author_uri',
+			replacement: pkg.author_uri
+		},
+		{
 			match: 'pkg.description',
 			replacement: pkg.description
+		},
+		{
+			match: 'pkg.requires',
+			replacement: pkg.requires
+		},
+		{
+			match: 'pkg.tested_up_to',
+			replacement: pkg.tested_up_to
+		},
+		{
+			match: 'pkg.tags',
+			replacement: pkg.tags
 		}
 		]
 	}))

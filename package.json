@@ -1,11 +1,16 @@
 {
-  "name": "Login Designer Minimal Backgrounds",
-  "slug": "login-designer-minimal-backgrounds",
-  "textdomain": "login-designer-minimal-backgrounds",
-  "version": "1.0.0",
-  "downloadid": "null",
-  "description": "Add minimal backgrounds to the Login Designer background image gallery.",
-  "author": "Login Designer <rich@logindesigner.com>",
-  "author_uri": "https://logindesigner.com",
-  "license": "http://www.gnu.org/licenses/gpl-2.0.html GNU Public License"
+	"name": "Login Designer — Minimal Backgrounds",
+	"slug": "login-designer-minimal-backgrounds",
+	"textdomain": "login-designer-minimal-backgrounds",
+	"version": "0.0.2",
+	"downloadid": "69",
+	"description": "Add minimal backgrounds to the Login Designer background image gallery.",
+	"tags": "login, custom login, customize wordpress login, wordpress login, customizer, custom admin, login logo, logo, login customizer",
+	"requires": "4.7",
+	"tested_up_to": "4.9",
+	"author": "Rich Tabor from ThatPluginCompany",
+	"author_shop": "ThatPluginCompany",
+	"author_uri": "https://thatplugincompany.com",
+	"plugin_uri": "https://logindesigner.com",
+	"license": "GPL-3.0"
 }

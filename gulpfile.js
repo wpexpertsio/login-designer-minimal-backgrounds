@@ -197,7 +197,7 @@ gulp.task( 'release-sftp-upload-zip', function () {
 		remotePath: '/wp-content/edd-live-downloads/'
 	}))
 
-	.pipe( notify( { message: 'The ' + packageName + ' theme zip files has been uploaded.', onLast: true } ) );
+	.pipe( notify( { message: 'The ' + packageName + ' zip has been uploaded.', onLast: true } ) );
 });
 
 // Open the download on logindesigner.com, to update the version number.
@@ -216,7 +216,3 @@ gulp.task( 'release-notification', function () {
 gulp.task( 'release', function( callback ) {
 	runSequence( 'build-process', [ 'release-sftp-upload-zip' ], 'release-edit-download-version-online', 'release-notification', callback);
 });
-
-
-
-

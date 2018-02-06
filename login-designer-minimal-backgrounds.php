@@ -82,7 +82,7 @@ if ( ! class_exists( 'Login_Designer_Minimal_Backgrounds' ) ) :
 		 */
 		public static function instance() {
 			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Login_Designer_Minimal_Backgrounds ) ) {
-				self::$instance = new Login_Designer_Minimal_Backgrounds;
+				self::$instance = new Login_Designer_Minimal_Backgrounds();
 				self::$instance->constants();
 				self::$instance->actions();
 				self::$instance->load_textdomain();
@@ -169,7 +169,7 @@ if ( ! class_exists( 'Login_Designer_Minimal_Backgrounds' ) ) :
 		 */
 		public function minimal_backgrounds( $backgrounds ) {
 
-			$image_dir  = LOGIN_DESIGNER_MINIMAL_BACKGROUNDS_PLUGIN_URL . 'assets/images/';
+			$image_dir = LOGIN_DESIGNER_MINIMAL_BACKGROUNDS_PLUGIN_URL . 'assets/images/';
 
 			// Change the "winter-01" key and leave the background images in the plugin folder (at least for month or so).
 			$minimal_backgrounds = array(
@@ -360,19 +360,18 @@ if ( ! class_exists( 'Login_Designer_Minimal_Backgrounds' ) ) :
 			}
 
 			// Retrieve license information.
-			$handler 	= new Login_Designer_License_Handler();
-			$key 		= trim( $handler->key() );
-			$shop_url 	= esc_url( $handler->shop_url() );
-			$author 	= esc_attr( $handler->author() );
+			$handler  = new Login_Designer_License_Handler();
+			$key      = trim( $handler->key() );
+			$shop_url = esc_url( $handler->shop_url() );
+			$author   = esc_attr( $handler->author() );
 
 			$updater = new Login_Designer_Extension_Updater( $shop_url, __FILE__, array(
-					'version' 	=> self::$version,
-					'license' 	=> $key,
-					'author' 	=> $author,
-					'item_id' 	=> self::$id,
-					'beta'		=> false,
-				)
-			);
+				'version' => self::$version,
+				'license' => $key,
+				'author'  => $author,
+				'item_id' => self::$id,
+				'beta'    => false,
+			) );
 		}
 
 		/**

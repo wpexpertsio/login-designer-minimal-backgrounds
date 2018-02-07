@@ -18,7 +18,7 @@ var imagesDestination	  	= './assets/images/'; // Destination folder of optimize
 
 var text_domain             	= '@@textdomain';
 var destFile                	= slug+'.pot';
-var packageName             	= project;
+var packageName             	= pkg.title;
 var bugReport               	= pkg.author_uri;
 var lastTranslator          	= pkg.author;
 var team                    	= pkg.author_shop;
@@ -37,7 +37,7 @@ var gulp         = require('gulp');
 var cleaner      = require('gulp-clean');
 var notify       = require('gulp-notify');
 var imagemin     = require('gulp-imagemin');
-var runSequence  = require('gulp-run-sequence');
+var runSequence  = require('run-sequence');
 var copy         = require('gulp-copy');
 var sort         = require('gulp-sort');
 var replace      = require('gulp-replace-task');

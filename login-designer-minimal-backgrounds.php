@@ -396,7 +396,7 @@ function login_designer_minimal_backgrounds() {
 
 		// Check for the activation class.
 		if ( ! class_exists( 'Login_Designer_Extension_Activation' ) ) {
-			require_once 'includes/login-designer-extension-activation.php';
+			require_once 'includes/class-login-designer-extension-activation.php';
 		}
 
 		$activation = new Login_Designer_Extension_Activation( plugin_dir_path( __FILE__ ), basename( __FILE__ ) );

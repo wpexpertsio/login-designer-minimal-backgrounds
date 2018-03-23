@@ -173,26 +173,11 @@ if ( ! class_exists( 'Login_Designer_Minimal_Backgrounds' ) ) :
 
 			// Change the "winter-01" key and leave the background images in the plugin folder (at least for month or so).
 			$minimal_backgrounds = array(
-				'minimal-01' => array(
-					'title' => esc_html__( 'Minimal 01', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'minimal-01-sml.jpg',
-				),
-				'minimal-02' => array(
-					'title' => esc_html__( 'Minimal 02', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'minimal-02-sml.jpg',
-				),
-				'minimal-03' => array(
-					'title' => esc_html__( 'Minimal 03', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'minimal-03-sml.jpg',
-				),
-				'minimal-04' => array(
-					'title' => esc_html__( 'Minimal 04', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'minimal-04-sml.jpg',
-				),
-				'minimal-05' => array(
-					'title' => esc_html__( 'Minimal 05', '@@textdomain' ),
-					'image' => esc_url( $image_dir ) . 'minimal-05-sml.jpg',
-				),
+				'minimal-01' => esc_url( $image_dir ) . 'minimal-01-sml.jpg',
+				'minimal-02' => esc_url( $image_dir ) . 'minimal-02-sml.jpg',
+				'minimal-03' => esc_url( $image_dir ) . 'minimal-03-sml.jpg',
+				'minimal-04' => esc_url( $image_dir ) . 'minimal-04-sml.jpg',
+				'minimal-05' => esc_url( $image_dir ) . 'minimal-05-sml.jpg',
 			);
 
 			// Combine the two arrays.
@@ -365,13 +350,15 @@ if ( ! class_exists( 'Login_Designer_Minimal_Backgrounds' ) ) :
 			$shop_url = esc_url( $handler->shop_url() );
 			$author   = esc_attr( $handler->author() );
 
-			$updater = new Login_Designer_Extension_Updater( $shop_url, __FILE__, array(
-				'version' => self::$version,
-				'license' => $key,
-				'author'  => $author,
-				'item_id' => self::$id,
-				'beta'    => false,
-			) );
+			$updater = new Login_Designer_Extension_Updater(
+				$shop_url, __FILE__, array(
+					'version' => self::$version,
+					'license' => $key,
+					'author'  => $author,
+					'item_id' => self::$id,
+					'beta'    => false,
+				)
+			);
 		}
 
 		/**
